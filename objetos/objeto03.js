@@ -53,9 +53,20 @@ class Militar extends Carro{
         }else{
             console.log("sem munição")
         }
-    }
+    } 
 }
 
 const carroMilitar = new Militar("lutador", 1, 6, 100, 1000)
 carroMilitar.info()
 carroMilitar.atirar()
+
+const c1 = new Carro("Chevrolet", 4, 4)
+c1.ligado = true
+c1.setVel(40)
+
+console.log(`Nome: ${c1.nome}`)
+console.log(`portas: ${c1.portas}`)
+console.log(`Ligado: ${c1.ligado ? "sim":"nao"}`)
+console.log(`Velocidade: ${c1.vel}`)
+
+
