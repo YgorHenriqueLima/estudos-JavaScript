@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas 04</title>
+</head>
+<body onload="desenha()">
+    <canvas id="desenho1" width="500" height="500" style="border: 1px solid black;">
+        <p>seu browser não possui suporte ao canvas</p>
+    </canvas>
+
+    <script type="text/javascript">
+        let px = 0
+        let anima
+        function desenha() {
+            var canvas = document.querySelector("#desenho1")
+            var ctx = canvas.getContext('2d')
+            ctx.clearRect(0,0,500,500)
+            ctx.fillStyle = "orange"
+            ctx.fillRect(px,0,50,50)
+            px++
+            anima = requestAnimationFrame(desenha)
+        }
+    </script>
+</body>
+</html>
