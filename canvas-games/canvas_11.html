@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas 11</title>
+</head>
+<body onload="desenha()">
+    <canvas id="desenho1" width="500" height="500" style="border: 1px solid black;">
+        <p>seu browser não possui suporte ao canvas</p>
+    </canvas>
+
+    <script type="text/javascript">
+        let canvas = document.querySelector("#desenho1")
+        let ctx = canvas.getContext('2d')
+
+        let jogador = new Image()
+        jogador.src = 'sprite.png'
+        let numSprite=4
+        let posInix=0
+        let Limagem=0
+        let largSprite=0
+
+        jogador.addEventListener('load',()=>{
+            largSprite=jogador.width/numSprite
+            altSprite=jogador.height/numSprite
+            posInix=largSprite*numSprite
+
+            ctx.drawImage(jogador,posInix,0, largSprite,altSprite,0,0,largSprite,altSprite)
+        })
+        let anima=setInterval(()=>{
+            ctx.clearRect(0,0,500,500);
+            
+            numSprite++
+            if(numSprite>3){
+                numSprite=0
+            }
+            posInix=largSprite*numSprite
+            ctx.drawImage(jogador,posInix,0, largSprite,altSprite,0,0,largSprite,altSprite)
+        },800)
+        
+    </script>
+</body>
+</html>
