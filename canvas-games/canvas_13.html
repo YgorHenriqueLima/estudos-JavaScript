@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas 13</title>
+</head>
+<body>
+    <canvas id="desenho1" width="500" height="500" style="border: 1px solid black;">
+        <p>seu browser não possui suporte ao canvas</p>
+    </canvas>
+
+    <script type="text/javascript">
+
+        class Jogador {
+            constructor(ctx, teclado) {
+                this.ctx = ctx
+                this.teclado = teclado
+                this.x = 0
+                this.y = 0 // Aqui estava usando "-" em vez de "="
+                this.vel = 3
+                this.nave = new Image()
+                this.nave.src = "nave.png"
+                this.nave.addEventListener('load', () => {
+                    this.desenhar()
+                })
+            }
+            gerenciar() {
+                if (this.teclado.esquerda){
+                    if(this.x > 0){
+                        this.x -= this.vel
+                    }
+                }
+                if (this.teclado.direita) {
+                    if(this.x < this.ctx.canvas.width - this.nave.width){
+                        this.x += this.vel
+                    }
+                }
+                if (this.teclado.cima) {
+                    if(this.y > 0){
+                        this.y -= this.vel
+                    }
+                }
+                if (this.teclado.baixo) {
+                    if(this.y < this.ctx.canvas.height - this.nave.height){
+                        this.y+=this.vel
+                    }
+                }
+            }
+            desenhar() {
+                this.gerenciar();
+                this.ctx.drawImage(this.nave, this.x, this.y)
+            }
+        }
+
+
+
+        let canvas = document.querySelector("#desenho1")
+        let ctx = canvas.getContext('2d')
+      
+        const teclado = {
+            cima: false,
+            baixo: false,
+            esquerda: false,
+            direita: false
+        };
+
+        const jogador = new Jogador(ctx,teclado)
+
+
+        window.addEventListener('keydown',(event)=>{
+            if(event.keyCode==37){ //esquerda
+                teclado.esquerda=true
+            }else if(event.keyCode==39){ //direita
+                teclado.direita=true
+            }else if(event.keyCode==38){ //cima
+                teclado.cima=true
+            }else if(event.keyCode==40){ //baixo
+                teclado.baixo=true
+            }
+        })
+
+        window.addEventListener('keyup',(event)=>{
+            if(event.keyCode==37){ //esquerda
+                teclado.esquerda=false
+            }else if(event.keyCode==39){ //direita
+                teclado.direita=false
+            }else if(event.keyCode==38){ //cima
+                teclado.cima=false
+            }else if(event.keyCode==40){ //baixo
+                teclado.baixo=false
+            }
+        })
+
+        const game = () => {
+            jogador.desenhar(); // Adicionando a chamada do método desenhar do jogador
+            requestAnimationFrame(game);
+        }
+
+    </script>
+    
+    <script src="Jogador.js"></script>
+</body>
+</html>
