@@ -21,7 +21,7 @@
                 this.vel = 3
                 this.nave = new Image()
                 this.nave.src = "nave.png"
-                this.nave.addEventListener('load', () => {
+                this.nave.addEventListener('load',()=>{
                     this.desenhar()
                 })
             }
@@ -48,6 +48,7 @@
                 }
             }
             desenhar() {
+                this.ctx.clearRect(0,0,this.ctx.canvas.width, this.ctx.canvas.height)
                 this.gerenciar();
                 this.ctx.drawImage(this.nave, this.x, this.y)
             }
@@ -96,9 +97,8 @@
             jogador.desenhar(); // Adicionando a chamada do método desenhar do jogador
             requestAnimationFrame(game);
         }
+        requestAnimationFrame(game)
 
     </script>
-    
-    <script src="Jogador.js"></script>
 </body>
 </html>
