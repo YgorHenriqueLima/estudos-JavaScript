@@ -32,27 +32,17 @@ function exibirIdades() {
 
 // Função para filtrar idades maiores e menores que 18
 function filtrarIdades() {
-  // se a array idades tiver o seu comprimento maior que 0 vai executar a condição de maior e menor, filtrando os valores, se  
   if (idades.length > 0){
-    const maior = idades.filter((valor)=>{
-        if(valor > 18){
-            return valor
-        }
-      })
-      const menor = idades.filter((valor)=>{
-        if(valor < 18){
-            return valor
-        }
-      })
-      
-      let msg = document.createElement('p')
-      msg.innerHTML = `todas as idades: ${idades}, <br> idades maiores de 18 anos: ${maior} <br> Idades menores que 18: ${menor}`
-      
-      const body = document.body
+    const maior = idades.filter((valor) => valor > 18);
+    const menor = idades.filter((valor) => valor < 18);
     
-      body.appendChild(msg)
+    let msg = document.createElement('p');
+    msg.innerHTML = `Todas as idades: ${idades}, <br> Idades maiores de 18 anos: ${maior} <br> Idades menores que 18: ${menor}`;
+    
+    // Adicionando a mensagem dentro da div#box-form
+    const boxForm = document.getElementById('box-form');
+    boxForm.appendChild(msg);
   } else {
-    alert('por favor, adicione pelo menos uma idade antes de filtrar')
+    alert('Por favor, adicione pelo menos uma idade antes de filtrar.');
   }
-  
 }
