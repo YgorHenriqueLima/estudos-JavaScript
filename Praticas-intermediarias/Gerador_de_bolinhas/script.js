@@ -93,7 +93,6 @@ class Bola {
 
     /*
         o controlar vai precisar do método da colisao_bordas e vai ver se encostou na borda
-
         se a bolinha encostou na borda, ele tem que mudar a direção da posição x para -1
     */
 
