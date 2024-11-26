@@ -9,6 +9,7 @@ console.log(mapa)
 caixa.innerHTML = mapa.get("curso")
 let pes = 10
 let res = ""
+
 if (mapa.has("canal")){
     caixa.innerHTML = "A chave existe na coleção com o valor: " + mapa.get(pes) 
 } else {
