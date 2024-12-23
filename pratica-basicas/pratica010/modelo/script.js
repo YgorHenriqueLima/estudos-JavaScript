@@ -41,7 +41,6 @@ function inLista(n,l){
         return false
     }
 }
-
 btnAdicionar.addEventListener("click",()=>{
      /* isto é, se o número digitado pelo usuário estiver entre 1 e 100 e não estiver dentro da lista, ele vai executar...{
         vai adicionar o valor na última posição
