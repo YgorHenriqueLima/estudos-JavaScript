@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStorage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <input type="text" name="f_texto" id="f_texto">
+        <br>
+        <p id="p_texto"></p>
+        <button id="btn_texto">WebStorage</button>
+    </form>
+
+    <script>
+        const f_texto = document.querySelector("#f_texto");
+        const p_texto = document.querySelector("#f_texto");
+        const btn_texto = document.querySelector("#btn_texto");
+        btn_texto.addEventListener("click",(evt)=>{
+
+        })
+        const numero = 40
+        const curso="JavaScript"
+        const professor="bruno"
+        const canal="CFB cursos"
+        localStorage.setItem("curso",curso)
+        localStorage.setItem("professor",professor)
+        localStorage.setItem("canal",canal)
+        localStorage.setItem("numero",numero)
+
+    </script>
+</body>
+</html>
