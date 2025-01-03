@@ -6,6 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form id="meuForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        const form = document.getElementById("meuForm")
+        form.addEventListener("submit",(evt)=>{
+            const campoemail = document.getElementById("email")
+
+            if(!campoemail.checkVisibility()){
+                alert("por favor, insire um e-mail válido")
+                event.preventDefault()
+            }
+        })
+    </script>
 </body>
 </html>
