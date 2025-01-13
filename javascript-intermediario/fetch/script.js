@@ -5,7 +5,7 @@ const btn_texto = document.getElementById("btn_texto");
 
 const obterdados = () =>{
     /*URL criado no replit para geração de números aleatórios de 0 a 10*/
-    const endpoint = "https://eef94aa9-120a-425f-ba93-cbe3b2d5b93d-00-2vnphai8aq8e8.spock.replit.dev/";
+    const endpoint = "http://127.0.0.1:1880/cfbcursos";
     fetch(endpoint)
     /*obtendo os dados convertidos para json*/
     .then(res=>res.json())
@@ -33,7 +33,7 @@ let cabecalho={
 };
 
 const gravarDados=()=>{
-    const endpoint = "https://eef94aa9-120a-425f-ba93-cbe3b2d5b93d-00-2vnphai8aq8e8.spock.replit.dev/";
+    const endpoint = "http://127.0.0.1:1880/gravar";
     fetch(endpoint,cabecalho)
     .then(res=>res.json())
     .then(ret=>{
