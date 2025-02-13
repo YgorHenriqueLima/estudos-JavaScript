@@ -5,7 +5,6 @@ function* cores() {
     yield "branco"
 }
 const iterator=cores()
-console.log(iterator.next().value)
-console.log(iterator.next().value)
-console.log(iterator.next().value)
-console.log(iterator.next().value)
+for(let cor of iterator){
+    console.log(cor)
+}
