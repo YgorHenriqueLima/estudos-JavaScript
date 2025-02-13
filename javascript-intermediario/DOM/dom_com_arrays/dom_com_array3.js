@@ -12,13 +12,12 @@ const query_cursosC2 = [...document.querySelectorAll("div.c2")]
 const query_cursoEspecial = document.querySelectorAll("#c1")[0]
 
 console.log(query_divTodos)
+console.log(divTodas)
+console.log(cursoTodos)
+console.log(cursosC1)
+console.log(cursosC2)
+console.log(cursoespecial)
 
-// console.log(divTodas)
-// console.log(cursoTodos)
-// console.log(cursosC1)
-// console.log(cursosC2)
-// console.log(cursoespecial)
-
-// cursosC1.map((el)=>{
-//     el.classList.add("destaque")
-// })
+cursosC1.map((el)=>{
+    el.classList.add("destaque")
+})
